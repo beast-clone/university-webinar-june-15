@@ -48,8 +48,8 @@
       "@id": "https://goocampus-hr-portal.onrender.com/university-webinar#event",
       "name": "Global Opportunities for Doctors Abroad — Free Live Webinar",
       "description": "A free live webinar for doctors and healthcare professionals covering entry criteria, university selection and career pathways across the US, UK, Canada, Australia, UAE, Germany and Ireland.",
-      "startDate": "2025-06-15T15:00:00+05:30",
-      "endDate": "2025-06-15T16:30:00+05:30",
+      "startDate": "2026-06-15T15:00:00+05:30",
+      "endDate": "2026-06-15T16:30:00+05:30",
       "eventStatus": "https://schema.org/EventScheduled",
       "eventAttendanceMode": "https://schema.org/OnlineEventAttendanceMode",
       "location": {
@@ -65,7 +65,7 @@
         "price": "0",
         "priceCurrency": "INR",
         "availability": "https://schema.org/InStock",
-        "validFrom": "2025-05-15T00:00:00+05:30"
+        "validFrom": "2026-05-15T00:00:00+05:30"
       },
       "inLanguage": "en"
     },
@@ -302,6 +302,37 @@
     margin-bottom: 32px; max-width: 580px;
   }
   .hero-meta { display: flex; flex-wrap: wrap; gap: 22px; margin-bottom: 36px; }
+  /* ──── COUNTDOWN ──── */
+  .hero-countdown {
+    display: flex; gap: 10px; justify-content: center;
+    margin: 0 auto 28px; flex-wrap: wrap;
+  }
+  .cd-box {
+    background: #fff; color: var(--ink);
+    border: 1.5px solid var(--accent);
+    border-radius: 14px; padding: 14px 20px; min-width: 82px;
+    text-align: center;
+    box-shadow: 0 4px 14px rgba(37,99,235,0.10);
+  }
+  .cd-num {
+    font-size: 32px; font-weight: 700; letter-spacing: -1px;
+    line-height: 1; color: var(--ink);
+    font-variant-numeric: tabular-nums;
+  }
+  .cd-label {
+    font-size: 10.5px; font-weight: 600; letter-spacing: 1.2px;
+    text-transform: uppercase; color: var(--accent);
+    margin-top: 8px;
+  }
+  .cd-box-sep {
+    align-self: center; font-size: 24px; font-weight: 700;
+    color: var(--line); line-height: 1;
+  }
+  .hero-countdown.is-live .cd-box {
+    background: #FEF2F2; border-color: #FCA5A5;
+  }
+  .hero-countdown.is-live .cd-num { color: #DC2626; }
+  .hero-countdown.is-live .cd-label { color: #DC2626; }
   .meta-item {
     display: inline-flex; align-items: center; gap: 10px;
     font-size: 14px; color: var(--ink-2); font-weight: 500;
@@ -419,6 +450,23 @@
   }
   .feature-card h4 { font-size: 17px; font-weight: 700; color: var(--ink); margin-bottom: 8px; letter-spacing: -0.2px; }
   .feature-card p { font-size: 14.5px; color: var(--muted); line-height: 1.6; }
+  /* ──── PROSE INTRO SECTION ──── */
+  .prose-block { max-width: 760px; margin: 0 auto; }
+  .prose-block .section-header { margin-bottom: 28px; text-align: center; }
+  .prose-block .section-header h2 { font-size: clamp(26px, 3.2vw, 38px); }
+  .prose-block p { font-size: 16.5px; line-height: 1.75; color: var(--muted); margin-bottom: 22px; }
+  .prose-block p:last-child { margin-bottom: 0; }
+  .prose-block p strong { color: var(--ink); font-weight: 600; }
+  /* ──── PROGRAMS GRID (2x2) ──── */
+  .grid-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: 22px; max-width: 980px; margin: 0 auto; }
+  .grid-2 .feature-card { padding: 32px 28px; }
+  .program-bullets { list-style: none; padding: 0; margin: 14px 0 0; display: flex; flex-direction: column; gap: 10px; }
+  .program-bullets li { position: relative; padding-left: 22px; font-size: 14.5px; color: var(--muted); line-height: 1.55; }
+  .program-bullets li::before {
+    content: ''; position: absolute; left: 0; top: 8px;
+    width: 6px; height: 6px; border-radius: 50%;
+    background: var(--accent);
+  }
 
   /* ──── SPEAKER ──── */
   .speaker-card {
@@ -580,6 +628,7 @@
     section { padding: 64px 0; }
     .hero { padding: 56px 0 40px; }
     .grid-3, .who-grid { grid-template-columns: 1fr; }
+    .grid-2 { grid-template-columns: 1fr; }
     .reg-landscape { padding: 32px 22px; }
     .reg-landscape-grid { grid-template-columns: 1fr; }
     .reg-landscape .register-btn { width: 100%; min-width: 0; }
@@ -613,10 +662,17 @@
     <h1>Global Opportunities for <em>Doctors Abroad</em></h1>
     <p class="hero-sub">Entry criteria, university selection and career pathways across the US, UK, Europe, UAE and beyond — all in one live session.</p>
 
+    <div class="hero-countdown" id="countdown" data-deadline="2026-06-15T15:00:00+05:30">
+      <div class="cd-box"><div class="cd-num" id="cdDays">--</div><div class="cd-label">Days</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdHrs">--</div><div class="cd-label">Hours</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdMin">--</div><div class="cd-label">Minutes</div></div>
+      <div class="cd-box"><div class="cd-num" id="cdSec">--</div><div class="cd-label">Seconds</div></div>
+    </div>
+
     <div class="hero-meta">
       <div class="meta-item">
         <span class="meta-item-icon">📅</span>
-        <div><small>Date</small>June 15, 2025</div>
+        <div><small>Date</small>June 15, 2026</div>
       </div>
       <div class="meta-item">
         <span class="meta-item-icon">🕒</span>
@@ -631,6 +687,116 @@
     <div class="hero-ctas">
       <button class="btn-primary" onclick="document.getElementById('register').scrollIntoView({behavior:'smooth'})">Reserve Your Free Seat →</button>
       <a href="#walk-away" class="btn-ghost">See What You'll Learn</a>
+    </div>
+  </div>
+</section>
+
+<!-- PROGRAMS COVERED -->
+<section id="programs">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Programs in Focus</span>
+      <h2>The Degrees We'll <em>Demystify</em></h2>
+      <p>MPH, MHA, MSc — entry criteria, career pathways and how to pick the right one for your profile.</p>
+    </div>
+    <div class="grid-2">
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h4>Introduction to MPH</h4>
+        <ul class="program-bullets">
+          <li>Typical entry criteria</li>
+          <li>Global career pathways after MPH</li>
+          <li>Ideal MPH specialisations</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h4>Introduction to MHA</h4>
+        <ul class="program-bullets">
+          <li>Typical entry criteria</li>
+          <li>Global career pathways after MHA</li>
+          <li>MHA vs MPH &mdash; which fits you</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h4>MSc &mdash; Health Sciences</h4>
+        <ul class="program-bullets">
+          <li>Public health, epidemiology, biostatistics &amp; allied tracks</li>
+          <li>Typical entry criteria</li>
+          <li>Global career pathways after MSc</li>
+        </ul>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🇩🇪</div>
+        <h4>Best Global Scope &amp; Germany Deep Dive</h4>
+        <ul class="program-bullets">
+          <li>Which degree carries the most global weight?</li>
+          <li>Public vs private universities in Germany for health PG</li>
+          <li>Eligibility criteria for each route</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TOP 6 REASONS -->
+<section class="section-soft" id="top-6-reasons">
+  <div class="wrap">
+    <div class="section-header">
+      <span class="eyebrow">Top 6 Reasons</span>
+      <h2>Why <em>University Programs?</em></h2>
+      <p>Six concrete benefits that make a postgraduate degree abroad worth the move.</p>
+    </div>
+    <div class="grid-3">
+      <div class="feature-card">
+        <div class="feature-icon">🌍</div>
+        <h4>Global Recognition &amp; Career Mobility</h4>
+        <p>Degrees from accredited international universities are recognised by healthcare systems, governments, and organisations worldwide. A PG from the US, UK, or Germany unlocks job markets otherwise closed to Indian medical graduates &mdash; from the WHO and CDC to multinational hospital networks and health consultancies.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🏥</div>
+        <h4>Break Into Non-Clinical &amp; Leadership Roles</h4>
+        <p>Clinical medicine is just one path. An MPH, MHA, or health-related MSc positions you for high-impact roles in healthcare policy, hospital management, global health, research, and corporate wellness &mdash; industries growing rapidly across every developed nation.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💼</div>
+        <h4>Higher Earning Potential</h4>
+        <p>PG graduates in healthcare management and public health abroad consistently earn 2&ndash;4x more than equivalent roles in India. Germany, the UAE, Canada, and Australia actively recruit qualified healthcare professionals with international postgraduate credentials.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎓</div>
+        <h4>Structured Specialisation</h4>
+        <p>University PG programs let you specialise precisely &mdash; epidemiology, biostatistics, health economics, hospital administration, or global health policy. That focused expertise makes you a strong candidate for niche, high-demand roles generalist profiles cannot access.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛂</div>
+        <h4>Post-Study Work Visa Pathways</h4>
+        <p>Germany, the UK, Canada, and Australia all offer post-study work visas that let international graduates stay and work after their degree. This creates a real, legal pathway to permanent residency and long-term settlement for healthcare professionals.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔬</div>
+        <h4>Research, Networking &amp; Global Exposure</h4>
+        <p>Studying abroad means learning alongside international peers, accessing cutting-edge research infrastructure, and building a global professional network &mdash; often the difference between a local career and a global one.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WEBINAR AGENDA / INTRO PROSE -->
+<section id="why-pg">
+  <div class="wrap">
+    <div class="prose-block">
+      <div class="section-header">
+        <span class="eyebrow">Why It Matters</span>
+        <h2>What Are University PG Programs &mdash; and <em>Why Do They Matter?</em></h2>
+      </div>
+
+      <p>A Postgraduate (PG) degree is more than an academic credential &mdash; it's a career accelerator. For healthcare professionals like MBBS and MD doctors, university PG programs such as an <strong>MPH</strong>, <strong>MHA</strong>, or <strong>MSc</strong> open doors to global opportunities that clinical pathways alone cannot provide.</p>
+
+      <p>These internationally recognised degrees blend research, policy, leadership, and management &mdash; equipping you to work not just as a practitioner, but as a decision-maker in healthcare systems worldwide. Whether you're looking to shift into public health, hospital administration, epidemiology, or global health consulting, a university PG program gives you the academic foundation and the international credential that top employers demand.</p>
+
+      <p>With universities across the <strong>US, UK, Germany, Canada, Australia, and Ireland</strong> offering world-class specialisations, now is the best time to understand your options &mdash; and take the first step forward.</p>
     </div>
   </div>
 </section>
@@ -846,7 +1012,7 @@
 </section>
 
 <footer>
-  <div class="wrap">© 2025 GooCampus Edu Solutions. All rights reserved.</div>
+  <div class="wrap">© 2026 GooCampus Edu Solutions. All rights reserved.</div>
 </footer>
 
 <script>
@@ -913,7 +1079,32 @@
     if (s) s.classList.add('show');
   }
 
-  // ─────── COUNTRY SLIDESHOW ───────
+  // ─────── COUNTDOWN ───────
+  (function(){
+    var el = document.getElementById('countdown');
+    if (!el) return;
+    var deadline = new Date(el.dataset.deadline).getTime();
+    function pad(n){ return n < 10 ? '0' + n : '' + n; }
+    function tick(){
+      var diff = deadline - Date.now();
+      if (diff <= 0) {
+        document.getElementById('cdDays').textContent = '00';
+        document.getElementById('cdHrs').textContent  = '00';
+        document.getElementById('cdMin').textContent  = '00';
+        document.getElementById('cdSec').textContent  = '00';
+        el.classList.add('is-live');
+        return false;
+      }
+      document.getElementById('cdDays').textContent = pad(Math.floor(diff / 86400000));
+      document.getElementById('cdHrs').textContent  = pad(Math.floor((diff % 86400000) / 3600000));
+      document.getElementById('cdMin').textContent  = pad(Math.floor((diff % 3600000) / 60000));
+      document.getElementById('cdSec').textContent  = pad(Math.floor((diff % 60000) / 1000));
+      return true;
+    }
+    if (tick()) setInterval(function(){ if (!tick()) {} }, 1000);
+  })();
+
+    // ─────── COUNTRY SLIDESHOW ───────
   (function(){
     var ss = document.getElementById('slideshow');
     if (!ss) return;
