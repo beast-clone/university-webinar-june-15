@@ -3,4 +3,5 @@
 # repos can update without touching this hub. Status 200 = transparent rewrite
 # (URL bar stays at goocampusevents.com). `!` = force, overrides any local file.
 
-/nz-pathway/*  https://goocampus-nz-pathway.netlify.app/nz-pathway/:splat  200!
+/amc-pathway/*  https://goocampus-amc-pathway.netlify.app/amc-pathway/:splat  200!
+/nz-pathway/*   https://goocampus-nz-pathway.netlify.app/nz-pathway/:splat    200!
