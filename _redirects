@@ -1,2 +1,3 @@
-# NZ Pathway Handbook landing page (proxy to standalone Netlify site, strip prefix)
-/nz-pathway/*  https://goocampus-nz-pathway.netlify.app/:splat  200!
+# No proxy rules currently — both /amc-pathway/ and /nz-pathway/ are physically
+# served from folders inside this repo (see README.md). Add rules here only when
+# a country launches as a separate Netlify site.
