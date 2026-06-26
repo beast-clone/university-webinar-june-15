@@ -5,3 +5,4 @@
 
 /amc-pathway/*  https://goocampus-amc-pathway.netlify.app/amc-pathway/:splat  200!
 /nz-pathway/*   https://goocampus-nz-pathway.netlify.app/nz-pathway/:splat    200!
+/insights/*     https://goocampus-dashboard.netlify.app/insights/:splat       200!
